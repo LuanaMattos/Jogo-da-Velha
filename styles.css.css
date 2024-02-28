@@ -1,0 +1,148 @@
+* {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+      }
+      
+      html, body {
+          background: radial-gradient(circle, rgb(248, 12, 114) 0%, rgb(228, 230, 234) 100%);
+          font-family: Arial, Helvetica, sans-serif;
+          height: 100%;
+      }
+      
+      header {
+          align-items: center;
+          display: flex;
+          gap: 30px;
+          height: 10%;
+          justify-content: center;
+      }
+      
+      header h1 {
+          color: #1a0f0f;
+          font-size: 50px;
+          text-shadow: #e8e8e580 2px 2px 3px;
+          text-transform: uppercase;
+      }
+      
+      header img {
+          width: 50px;
+      }
+      
+      .game-body {
+          align-items: center;
+          display: flex;
+          justify-content: center;
+          height: 80%;
+      }
+      
+      /* TABELA */
+      .board {
+          font-size: 100px;
+          font-weight: bold;
+          height: 500px;
+          text-align: center;
+          width: 500px;
+      }
+      
+      .cell {
+          border: 1px dashed #230b0b69;
+          border-radius: 8px;
+          color: #f00911ec;
+          height: calc(100% / 3);
+          text-shadow: #00000080 2px 2px 3px;
+          transition: background-color .3s;
+          width: calc(100% / 3);
+      }
+      
+      .cell:hover {
+          background-color: #f0e7efc9;
+      }
+      
+      .cell:hover::after {
+          content: var(--current-player, "X");
+          opacity: .4;
+      }
+      
+      .cell:empty {
+          cursor: pointer;
+      }
+      
+      .cell:not(:empty) {
+          pointer-events: none;
+      }
+      
+      footer {
+          align-items: center;
+          color: #FFF;
+          display: flex;
+          gap: 8px;
+          height: 10%;
+          justify-content: center;
+          padding: 0 10px;
+      }
+      
+      footer a {
+          color: #FFF;
+          text-decoration: none;
+      }
+      
+      footer a:hover {
+          color: #fa006e;
+          text-decoration: underline;
+      }
+      
+      /* MODAL */
+      .game-over-modal {
+          border: none;
+          border-radius: 8px;
+          box-shadow: rgba(0, 0, 0, .4) 2px 2px 5px;
+          height: 200px;
+          margin: 0 auto;
+          text-align: center;
+          width: 300px;
+      }
+      
+      .game-over-modal h3 {
+          color: #08c9f0;
+          margin: 20px 0;
+      }
+      
+      .game-over-message {
+          margin: 35px 0;
+      }
+      
+      .game-over-modal .restart-button {
+          background-color: #fa006e;
+          border: none;
+          border-radius: 8px;
+          color: #FFF;
+          cursor: pointer;
+          outline: none;
+          padding: 16px 32px;
+          text-transform: uppercase;
+      }
+      
+      .game-over-modal .restart-button:hover {
+          opacity: .8;
+      } 
+      
+      @media screen and (max-width: 900px) {
+          header h1 {
+              font-size: 36px;
+          }
+      
+          header img {
+              width: 35px;
+          }
+      
+          .board {
+              height: 350px;
+              width: 350px;
+          }
+      
+          .cell:hover::after {
+              content: '';
+              opacity: .4;
+          }
+      }
